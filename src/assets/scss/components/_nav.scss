@@ -1,0 +1,269 @@
+nav {
+    position: relative;
+    display: block;
+    width: 1300px;
+    margin: auto;
+
+    &.navbar {
+        padding: 0px;
+    }
+
+    // fixed header style
+    &.vue-fixed-header--isFixed {
+        position: fixed;
+        left: 50%;
+        top: 0;
+        margin-left: -650px;
+        height: 90px;
+        z-index: 99;
+        animation: nav-top .5s linear;
+
+        &::after {
+            content: "";
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 90px;
+            width: 100vw;
+            background: #000;
+            z-index: 9;
+            animation: nav-top .5s linear;
+        }
+
+        .logo {
+            width: 160px;
+            z-index: 10;
+        }
+
+        ul {
+            z-index: 10;
+        }
+    }
+
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        width: 200px;
+        height: 66px;
+        background: url('../img/index/logo.png');
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        transition: all .4s;
+    }
+
+    // 漢堡選單
+    .navbar-toggle {
+        position: absolute;
+        display: none;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 30px;
+        margin: 10px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        z-index: 12;
+
+        span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            margin: 6px 0;
+            background: #fff;
+            transition: all .3s;
+        }
+
+        &.active {
+            span {
+                position: absolute;
+                top: 8px;
+                width: 30px;
+
+                &:nth-child(1) {
+                    transform: rotate(45deg);
+                }
+
+                &:nth-child(2) {
+                    transform: rotate(-45deg);
+                }
+
+                &:nth-child(3) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    >ul {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+
+        li {
+            display: inline;
+            margin: 10px;
+            cursor: pointer;
+
+            a {
+                color: #fff;
+                font-weight: bold;
+                text-decoration: none;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .language {
+        display: inline-block;
+        position: relative;
+        margin-bottom: -10px;
+
+        .icon_down {
+            position: absolute;
+            top: 10px;
+            right: -20px;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        >span {
+            position: relative;
+            z-index: 12;
+        }
+
+        span {
+            display: block;
+            width: 34px;
+            height: 34px;
+            background-size: cover;
+
+            &.cn {
+                background-image: url('../img/icon/cn.svg');
+            }
+
+            &.en {
+                background-image: url('../img/icon/en.svg');
+            }
+        }
+
+        ul {
+            position: absolute;
+            right: 0;
+            top: 0px;
+            opacity: 0;
+            z-index: 10;
+            transition: all .5s;
+
+            li {
+                display: block;
+                margin: 10px 0px;
+            }
+        }
+
+        &:hover,
+        &:active {
+            ul {
+                top: 34px;
+                opacity: 1;
+            }
+        }
+
+    }
+
+}
+
+// nav下拉置頂動態
+@keyframes nav-top {
+    0% {
+        top: -90px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    nav {
+        position: static;
+        width: 100vw;
+
+        // fixed header style
+        &.vue-fixed-header--isFixed {
+            left: 0;
+            top: 0;
+            margin: auto;
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    nav {
+        .logo {
+            width: 180px;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    nav {
+        .mask-bg {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            display: none;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        // 漢堡選單
+        .navbar-toggle {
+            display: block;
+
+            &.active {
+                ~ul {
+                    display: block;
+                    right: 0px;
+
+                }
+
+                ~.mask-bg {
+                    display: block;
+                }
+            }
+
+
+        }
+
+        >ul {
+            display: none;
+            top: 0px;
+            right: -200px;
+            width: 180px;
+            height: 100vh;
+            padding: 80px 10px 0 10px;
+            background: #000;
+            transition: all .4s;
+            z-index: 10;
+
+            li {
+                display: inherit;
+            }
+        }
+
+        .language {
+            ul {
+                left: 0;
+                right: auto;
+            }
+        }
+
+    }
+}

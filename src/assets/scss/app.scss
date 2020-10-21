@@ -1,0 +1,18 @@
+// app.scss
+
+// base：網站基本設定
+@import 'base/reset';
+@import 'base/base';
+
+// utils：建構樣式的scss檔案。如變數(variable)、樣式方法(function)等
+@import 'utils/animation';
+
+// components：組件相關
+@import 'components/nav';
+@import 'components/footer';
+
+// Pages：views相關
+@import 'page/index';
+
+// layout：整體layout上的設定，ex.rwd
+@import 'layout/rwd';

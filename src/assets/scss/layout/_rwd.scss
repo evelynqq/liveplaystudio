@@ -1,0 +1,310 @@
+@media only screen and (max-width: 1300px) {
+    #home.main {
+
+        .banner {
+            height: 650px;
+
+            // 泡泡樣式
+            .bubble {
+                width: 100vw;
+                height: 650px;
+            }
+        }
+
+        // About Us
+        .aboutus p {
+            width: calc(100% - 40px);
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    html {
+        font-size: 9px;
+    }
+
+    #home.main {
+        .banner {
+            height: 500px;
+
+            // 泡泡樣式
+            .bubble {
+                height: 500px;
+            }
+        }
+
+        // About Us
+        .aboutus {
+            .content {
+                width: 90%;
+                padding-left: 30%;
+
+                .icon-play,
+                .point-animation {
+                    left: 15%;
+                }
+
+                p {
+                    white-space: inherit;
+                }
+            }
+        }
+
+        // Service
+        .service {
+            .service-bubble {
+                width: 100%;
+                flex-direction: column;
+
+                .liveplay-logo {
+                    width: 500px;
+                    margin: 80px auto 0 auto;
+                }
+
+                .liveplay-chooes {
+                    width: 500px;
+                    margin: 450px auto 0 auto;
+
+                    li {
+                        &:nth-child(2) {
+                            margin-left: 0px;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Contact
+        .contact {
+            ul {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #home.main {
+        .banner {
+            height: 400px;
+
+            // 泡泡樣式
+            .bubble {
+                width: 60vw;
+                margin-left: -400px;
+                height: 400px;
+            }
+        }
+
+        // About Us
+        .aboutus {
+            .content {
+                background-size: auto 100%;
+
+                .icon-play,
+                .point-animation {
+                    left: 10%;
+                }
+
+                p {
+                    width: calc(100% - 20px);
+                    line-height: 26px;
+                }
+            }
+        }
+
+        // Contact
+        .contact {
+            ul {
+                flex-direction: column;
+
+                li {
+                    margin: 10px 10%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 8px;
+    }
+
+    #home.main {
+        .banner {
+            height: 250px;
+
+            // 泡泡樣式
+            .bubble {
+                margin-left: -220px;
+                height: 250px;
+            }
+        }
+
+        // About Us
+        .aboutus {
+            padding-bottom: 50px;
+
+            .content {
+
+                .icon-play,
+                .point-animation {
+                    left: 5%;
+                }
+            }
+        }
+
+        // Service
+        .service {
+            .map {
+                height: 200px;
+                background-size: 100% auto;
+
+                .box {
+                    top: -10px;
+                    margin-left: 60px;
+
+                    &:before {
+                        transform: scale(0.8, 0.8) rotate(45deg) translate(5px, 8px);
+                    }
+
+                    &:after {
+                        transform: scale(0.9, 0.9);
+                    }
+                }
+            }
+
+            .service-bubble {
+                height: 800px;
+
+                .liveplay-logo {
+                    margin-top: 50px;
+                    transform-origin: 0 0;
+                    transform: scale(0.7, 0.7) translate(9%, 0);
+                }
+
+                .liveplay-chooes {
+                    width: 90vw;
+                    transform-origin: 0 0;
+                    margin: 350px auto 0 auto;
+
+                    li {
+                        .bubble {
+                            width: 20%;
+                            background-size: 100% auto;
+                            background-position: center;
+                            font-size: 4rem;
+                        }
+
+                        h2 {
+                            top: 20px;
+                            left: 22%;
+                        }
+
+                        p {
+                            top: 55px;
+                            left: 22%;
+                            width: 80%;
+                        }
+                    }
+
+                    li p {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+
+        // Contact
+        .contact ul li {
+            margin: 10px 5%;
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    html {
+        font-size: 7px;
+    }
+
+    #home.main {
+
+        // About Us
+        .aboutus {
+            .content {
+                .icon-play {
+                    width: 70px;
+                    height: 68px;
+                }
+
+                .point-animation {
+                    top: 110px;
+                    width: 70px;
+
+                    .point {
+                        width: 8px;
+                        height: 8px;
+
+                        @for $i from 1 through 5 {
+                            &:nth-child(#{$i}) {
+                                left: $i * 15px - 15px;
+                            }
+                        }
+                    }
+                }
+
+                p {
+                    line-height: 26px;
+                }
+            }
+        }
+
+        // Service
+        .service {
+            .map {
+                .box {
+                    top: -25px;
+                    margin-left: 40px;
+                }
+            }
+
+            .service-bubble {
+                height: 650px;
+
+                .liveplay-logo {
+                    margin: 20px auto;
+                    transform: scale(0.5, 0.5) translate(25%, 0);
+                }
+
+                .liveplay-chooes {
+                    margin-top: 200px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    #home.main {
+
+        // About Us
+        .aboutus {
+            .content {
+                p {
+                    line-height: 20px;
+                }
+            }
+        }
+
+        // Service
+        .service {
+            .service-bubble {
+                .liveplay-logo {
+                    margin: 20px auto;
+                    transform: scale(0.5, 0.5) translate(15%, 0);
+                }
+            }
+        }
+    }
+}
