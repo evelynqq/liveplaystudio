@@ -1,5 +1,14 @@
 <template>
   <footer>
-    <p>© 版權所有 2020 - Live Play Studio</p>
+    <p>{{ year }} - Live Play Studio</p>
   </footer>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      year: "Copyright © " + new Date().getFullYear(),
+    };
+  },
+};
+</script>

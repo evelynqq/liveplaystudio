@@ -67,7 +67,8 @@ import FixedHeader from "vue-fixed-header";
 export default {
   data() {
     return {
-      locale: localStorage.getItem("locale") || "cn",
+      // 取得i18n中的locale值
+      locale: this.$i18n.locale,
       btClick: false,
     };
   },
@@ -77,8 +78,11 @@ export default {
   methods: {
     // 切換語系
     changeLocale(index) {
+      // 變更data中locale值
       this.locale = index;
+      // 將i18n中locale的值變更為所選的設定值
       this.$i18n.locale = index;
+      // 在本地儲存"locale"的設定為目前選擇的選項
       localStorage.setItem("locale", index);
     },
     // 視窗小於等於768時，點擊toggleMenu才會有反應
@@ -87,9 +91,6 @@ export default {
         this.btClick = !this.btClick;
       }
     },
-  },
-  created() {
-    this.$i18n.locale = this.locale;
   },
 };
 </script>
