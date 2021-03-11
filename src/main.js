@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import App from './App.vue';
 // router
 import router from "./router";
 // i18n
@@ -15,7 +15,7 @@ Vue.component("font-awesome-icon", FontAwesomeIcon);
 import VueScrollTo from "vue-scrollto";
 Vue.use(VueScrollTo);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
   router,

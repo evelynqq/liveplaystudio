@@ -14,11 +14,11 @@
       </button>
       <div class="mask-bg" @click="toggleMenu()"></div>
       <ul class="main-menu">
-        <!-- <li>
+        <li>
           <router-link to="/ReservedPage" @click.native="toggleMenu()"
             >ReservedPage</router-link
           >
-        </li> -->
+        </li>
         <li>
           <router-link
             to="/"

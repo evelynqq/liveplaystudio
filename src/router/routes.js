@@ -1,6 +1,6 @@
 // views
-import Home from '@/views/Home.vue'
-import ReservedPage from '@/views/ReservedPage.vue'
+import Home from '@/views/Home.vue';
+import ReservedPage from '@/views/ReservedPage.vue';
 
 const routes = [
     {
